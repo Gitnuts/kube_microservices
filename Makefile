@@ -7,6 +7,7 @@ delete-kubernetes-all:
 deploy-to-gcp:
 	make delete-kubernetes-all
 	helm upgrade --install -f values.yaml airflow apache-airflow/airflow --namespace airflow --create-namespace --debug
+	kubectl apply -f tradingview.yaml -n airflow
 	kubectl apply -f zookeeper.yaml -n airflow
 	kubectl apply -f kafka.yaml -n airflow
 	kubectl port-forward svc/airflow-webserver 8080:8080 --namespace airflow
