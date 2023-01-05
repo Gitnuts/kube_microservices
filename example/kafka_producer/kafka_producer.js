@@ -76,7 +76,7 @@ const run = async () => {
         data.table.push(result);
         console.log(data)
         producer.send({
-        	topic: 'kube_kafka_integration',
+        	topic: 'kube_kafka_topic',
             messages: [
             { value: JSON.stringify(data)},
             ]})
