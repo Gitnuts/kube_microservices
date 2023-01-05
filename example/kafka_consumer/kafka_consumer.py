@@ -8,7 +8,7 @@ import logging
 if __name__ == '__main__':
 
     logging.basicConfig(level=logging.INFO)
-    consumer = KafkaConsumer("BTCUSDT_CM_Ultimate_MA_MTF_V2_TEMA",
+    consumer = KafkaConsumer("kube_kafka_topic",
                              bootstrap_servers=['kafka-service:9092'],
                              api_version=(0, 10, 1),
                              auto_offset_reset='latest',
