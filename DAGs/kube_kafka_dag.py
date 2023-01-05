@@ -37,11 +37,11 @@ with DAG(
         name="Kafka_consumer",
         project_id="###",  # name of project in GCP
         location="###",  # location of GKE, e.g us-west4-b
-        cluster_name="automato-cluster",  # name of GKE cluster
+        cluster_name="###",  # name of GKE cluster
         namespace="airflow",
         image_pull_policy="Always",
-        image_pull_secrets=[k8s.V1LocalObjectReference('secret')],  # set an image pull secret in GKE
-        image="###",  # path to docker image in GCP
+        image_pull_secrets=[k8s.V1LocalObjectReference('secret')],  # set an image pull secret in GKE and name it as 'secret'
+        image="###",  # path to your docker image (kafka consumer) in GCP
         get_logs=True,
         is_delete_operator_pod=True,
     )
